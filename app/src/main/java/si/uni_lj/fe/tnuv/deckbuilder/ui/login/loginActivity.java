@@ -1,17 +1,8 @@
 package si.uni_lj.fe.tnuv.deckbuilder.ui.login;
 
 import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -23,17 +14,26 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import si.uni_lj.fe.tnuv.deckbuilder.HomeActivity;
 import si.uni_lj.fe.tnuv.deckbuilder.MainActivity;
 import si.uni_lj.fe.tnuv.deckbuilder.R;
-import si.uni_lj.fe.tnuv.deckbuilder.signup.SignActivity;
-import si.uni_lj.fe.tnuv.deckbuilder.ui.login.LoginViewModel;
-import si.uni_lj.fe.tnuv.deckbuilder.ui.login.LoginViewModelFactory;
 import si.uni_lj.fe.tnuv.deckbuilder.databinding.ActivityLoginBinding;
 
 public class loginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
+
+    /*public void homeActivity(View v) {
+        Intent intent = new Intent(loginActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }*/
 
     public void mainActivity(View v) {
         Intent intent = new Intent(loginActivity.this, MainActivity.class);
@@ -126,6 +126,10 @@ public class loginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
+
+                Intent intent = new Intent(loginActivity.this, HomeActivity.class);
+                startActivity(intent);
+
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
             }
@@ -133,7 +137,8 @@ public class loginActivity extends AppCompatActivity {
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
+        //String welcome = getString(R.string.welcome) + model.getDisplayName();
+        String welcome = getString(R.string.welcome);
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }

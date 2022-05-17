@@ -1,6 +1,7 @@
 package si.uni_lj.fe.tnuv.deckbuilder.data;
 
 import si.uni_lj.fe.tnuv.deckbuilder.data.model.LoggedInUser;
+//import si.uni_lj.fe.tnuv.deckbuilder.ui.login.LoggedInUserView;
 
 import java.io.IOException;
 
@@ -16,7 +17,7 @@ public class LoginDataSource {
             LoggedInUser fakeUser =
                     new LoggedInUser(
                             java.util.UUID.randomUUID().toString(),
-                            "Jane Doe");
+                            "juju jaja");
             return new Result.Success<>(fakeUser);
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));

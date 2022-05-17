@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/font/genos.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2664202210531069" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11757354736328125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3218093872070313" />
         <entry key="app/src/main/res/layout/activity_sign.xml" value="0.21859440518488393" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/content_signup.xml" value="0.23541666666666666" />

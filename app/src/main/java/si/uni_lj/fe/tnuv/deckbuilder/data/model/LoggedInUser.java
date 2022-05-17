@@ -1,4 +1,6 @@
 package si.uni_lj.fe.tnuv.deckbuilder.data.model;
+import si.uni_lj.fe.tnuv.deckbuilder.ui.login.loginActivity;
+
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

@@ -14,6 +14,7 @@
     <string name="confirm_password">Confirm password</string>
     <string name="signup_user">SIGN UP</string>
     <string name="login_user">LOGIN</string>
+    <string name="register">REGISTER</string>
 
 
     <string name="title_activity_signup">SignupActivity</string>
@@ -25,6 +26,13 @@
 
     <string name="go_back">Go back</string>
 
+    <string name="library">LIBRARY</string>
+    <string name="arsenal">ARSENAL</string>
+    <string name="explore">EXPLORE</string>
+    <string name="my_buddies">MY BUDDIES</string>
+    <string name="create">Create</string>
+    <string name="share">Share</string>
+    <string name="add_buddy">Add buddy</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>
