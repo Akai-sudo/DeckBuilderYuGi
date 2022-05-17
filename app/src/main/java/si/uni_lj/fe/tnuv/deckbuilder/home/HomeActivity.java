@@ -1,4 +1,4 @@
-package si.uni_lj.fe.tnuv.deckbuilder;
+package si.uni_lj.fe.tnuv.deckbuilder.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 

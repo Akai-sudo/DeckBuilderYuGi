@@ -20,8 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import si.uni_lj.fe.tnuv.deckbuilder.HomeActivity;
-import si.uni_lj.fe.tnuv.deckbuilder.MainActivity;
+import si.uni_lj.fe.tnuv.deckbuilder.home.HomeActivity;
+import si.uni_lj.fe.tnuv.deckbuilder.main.MainActivity;
 import si.uni_lj.fe.tnuv.deckbuilder.R;
 import si.uni_lj.fe.tnuv.deckbuilder.databinding.ActivityLoginBinding;
 
