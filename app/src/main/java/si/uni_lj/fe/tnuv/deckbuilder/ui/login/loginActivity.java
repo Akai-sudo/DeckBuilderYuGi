@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,15 +23,22 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import si.uni_lj.fe.tnuv.deckbuilder.MainActivity;
 import si.uni_lj.fe.tnuv.deckbuilder.R;
+import si.uni_lj.fe.tnuv.deckbuilder.signup.SignActivity;
 import si.uni_lj.fe.tnuv.deckbuilder.ui.login.LoginViewModel;
 import si.uni_lj.fe.tnuv.deckbuilder.ui.login.LoginViewModelFactory;
 import si.uni_lj.fe.tnuv.deckbuilder.databinding.ActivityLoginBinding;
 
-public class LoginActivity extends AppCompatActivity {
+public class loginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
+
+    public void mainActivity(View v) {
+        Intent intent = new Intent(loginActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
