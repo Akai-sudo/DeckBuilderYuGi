@@ -127,6 +127,12 @@ public class loginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
 
+                /*EditText input = findViewById(R.id.username);
+                String username = input.getText().toString();
+
+                EditText input2 = findViewById(R.id.password);
+                String password = input.getText().toString();*/
+
                 Intent intent = new Intent(loginActivity.this, HomeActivity.class);
                 startActivity(intent);
 
@@ -140,10 +146,32 @@ public class loginActivity extends AppCompatActivity {
         //String welcome = getString(R.string.welcome) + model.getDisplayName();
         String welcome = getString(R.string.welcome);
         // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+
+        EditText input = findViewById(R.id.username);
+        String username = input.getText().toString();
+
+        EditText input2 = findViewById(R.id.password);
+        String password = input.getText().toString();
+
+        Toast.makeText(getApplicationContext(), welcome+username+"!", Toast.LENGTH_LONG).show();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
+
+    //koda iz vaj za shranjevanje vnosa
+    /*public void shrani(View view) {
+        //preberi vsebino vnosnega polja
+        EditText input = findViewById(R.id.username);
+        String username = input.getText().toString();
+
+        EditText input2 = findViewById(R.id.password);
+        String password = input.getText().toString();
+
+        //shrani v datoteko
+        //vpisiVDatoteko(vsebina+"\n");
+        //vnosno.setText("");
+        //vnosno.clearFocus();
+    }*/
 }
