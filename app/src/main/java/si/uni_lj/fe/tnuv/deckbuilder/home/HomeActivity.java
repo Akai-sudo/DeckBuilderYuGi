@@ -8,13 +8,20 @@ import android.view.View;
 import android.widget.Button;
 
 import si.uni_lj.fe.tnuv.deckbuilder.databinding.ActivityHomeBinding;
-//import si.uni_lj.fe.tnuv.deckbuilder.databinding.ActivityLoginBinding;
 import si.uni_lj.fe.tnuv.deckbuilder.databinding.ActivityLoginBinding;
+import si.uni_lj.fe.tnuv.deckbuilder.deck.DeckActivity;
+import si.uni_lj.fe.tnuv.deckbuilder.main.MainActivity;
 import si.uni_lj.fe.tnuv.deckbuilder.ui.login.loginActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
+
+    /*public void deckActivity(View v) {
+        Intent intent = new Intent(HomeActivity.this, DeckActivity.class);
+        startActivity(intent);
+    }*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         final Button goBackButton = binding.goback;
+        //final Button createButton = binding.create;
         //setContentView(R.layout.activity_home);
 
         goBackButton.setOnClickListener(new View.OnClickListener() {
@@ -37,5 +45,15 @@ public class HomeActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());*/
             }
         });
+
+        /*createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(HomeActivity.this, DeckActivity.class);
+                startActivity(intent);
+            }
+        });*/
     }
+
 }
