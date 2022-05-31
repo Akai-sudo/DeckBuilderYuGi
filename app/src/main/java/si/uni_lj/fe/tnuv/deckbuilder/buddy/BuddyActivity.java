@@ -1,14 +1,16 @@
 package si.uni_lj.fe.tnuv.deckbuilder.buddy;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-import si.uni_lj.fe.tnuv.deckbuilder.databinding.ActivityBuddyBinding;
-import si.uni_lj.fe.tnuv.deckbuilder.home.HomeActivity;
+import si.uni_lj.fe.tnuv.deckbuilder.R;
 
 public class BuddyActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_buddy);
+    }
 }

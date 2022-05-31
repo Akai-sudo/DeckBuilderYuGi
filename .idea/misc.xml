@@ -3,17 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_add_cards.xml" value="0.1" />
-        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_buddy.xml" value="0.1" />
-        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_deck.xml" value="0.176" />
-        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_home.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/font/genos.xml" value="0.18072916666666666" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_add_cards.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_add_cards2.xml" value="0.146875" />
+        <entry key="app/src/main/res/layout/activity_buddy.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_buddy2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_deck.xml" value="0.2058609008789063" />
+        <entry key="app/src/main/res/layout/activity_deck2.xml" value="0.14739583333333334" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.17260589599609372" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2664202210531069" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24582519531250002" />
-        <entry key="app/src/main/res/layout/activity_sign.xml" value="0.21859440518488393" />
+        <entry key="app/src/main/res/layout/activity_sign.xml" value="0.4018494100676965" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/content_signup.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.24947916666666667" />
