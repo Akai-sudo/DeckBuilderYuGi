@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "873071456946",
+    "project_id": "deckbuilder-7d86f",
+    "storage_bucket": "deckbuilder-7d86f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873071456946:android:d5b75135306aee5fc1cfab",
+        "android_client_info": {
+          "package_name": "si.uni_lj.fe.tnuv.deckbuilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873071456946-m46t9e7qj4lhhvhha82s64es5u9s2ar5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHy_4HiTEAAupuw2lUmVqZTqtKtLinz6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873071456946-m46t9e7qj4lhhvhha82s64es5u9s2ar5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
