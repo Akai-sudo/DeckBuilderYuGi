@@ -1,4 +1,4 @@
-package si.uni_lj.fe.tnuv.deckbuilder.main;
+package si.uni_lj.fe.tnuv.deckbuilder;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import si.uni_lj.fe.tnuv.deckbuilder.R;
-import si.uni_lj.fe.tnuv.deckbuilder.signup.SignActivity;
 import si.uni_lj.fe.tnuv.deckbuilder.ui.login.loginActivity;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,13 +1,10 @@
-package si.uni_lj.fe.tnuv.deckbuilder.signup;
+package si.uni_lj.fe.tnuv.deckbuilder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-import si.uni_lj.fe.tnuv.deckbuilder.main.MainActivity;
-import si.uni_lj.fe.tnuv.deckbuilder.R;
 
 public class SignActivity extends AppCompatActivity {
 
