@@ -26,25 +26,26 @@
 
 
     <string name="library">LIBRARY</string>
-    <string name="arsenal">ARSENAL</string>
-    <string name="explore">EXPLORE</string>
-    <string name="my_buddies">MY BUDDIES</string>
+    <string name="arsenal">Arsenal</string>
+    <string name="explore">Explore</string>
+    <string name="my_buddies">My buddies</string>
     <string name="create">Create</string>
     <string name="share">Share</string>
     <string name="add_buddy">Add buddy</string>
+    <string name="my_buddy">My buddy</string>
 
     <string name="new_deck">New Deck</string>
     <string name="add">Add</string>
     <string name="delete">Delete</string>
     <string name="build">Build</string>
-    <string name="build_deck">deck builder</string>
+    <string name="build_deck">DECK BUILDER</string>
     <string name="monster">Monster cards</string>
     <string name="extra_monster">Extra monster cards</string>
     <string name="trap_spell">Trap and spell cards</string>
 
     <string name="buddy">BUDDY</string>
-    <string name="profile">PROFILE</string>
-    <string name="decks">DECKS</string>
+    <string name="profile">Profile</string>
+    <string name="decks">Decks</string>
     <string name="all_cards">ALL CARDS</string>
 
     <string name="categories">Categories:</string>
