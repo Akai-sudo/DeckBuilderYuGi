@@ -11,20 +11,20 @@
         android:theme="@style/Theme.DeckBuilder">
         <activity
             android:name=".deck.AddCardsActivity"
-            android:parentActivityName=".deck.DeckActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".deck.DeckActivity" />
         <activity
             android:name=".BuddyActivity"
-            android:parentActivityName=".HomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".deck.DeckActivity"
-            android:parentActivityName=".HomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".HomeActivity"
-            android:parentActivityName=".ui.login.loginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ui.login.loginActivity" />
         <activity
             android:name=".SignActivity"
             android:exported="false"
