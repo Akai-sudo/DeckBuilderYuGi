@@ -52,36 +52,35 @@
         app:layout_constraintVertical_bias="0.096"
         tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-    <TextView
-        android:id="@+id/extraMonsterCards"
-        android:layout_width="wrap_content"
+    <!--<LinearLayout
+        android:id="@+id/karteLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:fontFamily="monospace"
-        android:text="@string/extra_monster"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404"
-        tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        android:orientation="vertical" />-->
 
-    <TextView
-        android:id="@+id/trap_spell"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:fontFamily="monospace"
-        android:text="@string/trap_spell"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:id="@+id/containerKart"
+        android:layout_width="406dp"
+        android:layout_height="461dp"
+        app:layout_constraintBottom_toTopOf="@+id/button8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725"
-        tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        app:layout_constraintTop_toBottomOf="@+id/monsterCard">
+
+        <LinearLayout
+            android:id="@+id/karteLayout"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

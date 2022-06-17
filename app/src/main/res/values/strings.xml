@@ -39,7 +39,7 @@
     <string name="delete">Delete</string>
     <string name="build">Build</string>
     <string name="build_deck">DECK BUILDER</string>
-    <string name="monster">Monster cards</string>
+    <string name="monster">All cards</string>
     <string name="extra_monster">Extra monster cards</string>
     <string name="trap_spell">Trap and spell cards</string>
 
