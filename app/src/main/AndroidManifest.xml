@@ -3,13 +3,16 @@
     package="si.uni_lj.fe.tnuv.deckbuilder">
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DeckBuilder">
+        <activity
+            android:name=".CardInfo"
+            android:exported="false"
+            android:parentActivityName=".deck.DeckActivity"/>
         <activity
             android:name=".deck.AddCardsActivity"
             android:exported="false"
@@ -45,7 +48,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>
