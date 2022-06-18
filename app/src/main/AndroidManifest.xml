@@ -13,6 +13,11 @@
             android:name=".CardInfo"
             android:exported="false"
             android:parentActivityName=".deck.DeckActivity"/>
+
+        <activity
+            android:name=".LogActivity"
+            android:exported="false" />
+
         <activity
             android:name=".deck.AddCardsActivity"
             android:exported="false"
@@ -27,16 +32,10 @@
             android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false"
-            android:parentActivityName=".ui.login.loginActivity" />
+            android:exported="false" />
         <activity
             android:name=".SignActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.login.loginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"

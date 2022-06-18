@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
-import si.uni_lj.fe.tnuv.deckbuilder.ui.login.loginActivity;
+//import si.uni_lj.fe.tnuv.deckbuilder.ui.login.loginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,8 +54,13 @@ public class MainActivity extends AppCompatActivity {
         return dobljeneKarte;
     }*/
 
-    public void loginActivity(View v) {
+    /*public void loginActivity(View v) {
         Intent intent = new Intent(MainActivity.this, loginActivity.class);
+        startActivity(intent);
+    }*/
+
+    public void loginActivity(View v) {
+        Intent intent = new Intent(MainActivity.this, LogActivity.class);
         startActivity(intent);
     }
 

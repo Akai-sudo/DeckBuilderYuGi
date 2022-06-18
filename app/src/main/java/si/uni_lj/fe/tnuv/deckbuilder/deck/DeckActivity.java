@@ -20,7 +20,6 @@ import si.uni_lj.fe.tnuv.deckbuilder.HomeActivity;
 import si.uni_lj.fe.tnuv.deckbuilder.MainActivity;
 
 import si.uni_lj.fe.tnuv.deckbuilder.R;
-import si.uni_lj.fe.tnuv.deckbuilder.ui.login.loginActivity;
 
 public class DeckActivity extends AppCompatActivity {
 

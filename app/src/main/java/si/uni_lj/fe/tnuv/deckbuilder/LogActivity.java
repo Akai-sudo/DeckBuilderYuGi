@@ -17,82 +17,78 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignActivity extends AppCompatActivity {
-
-    EditText inputEmail, inputPassword, inputConfirmPassword;
-    Button register;
+public class LogActivity extends AppCompatActivity {
+    EditText inputEmail, inputPassword;
+    Button login;
     String emailPattern = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
+
     ProgressDialog progressDialog;
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
+    public void homeActivity(View v) {
+        Intent intent = new Intent(LogActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
+
     public void mainActivity(View v) {
-        Intent intent = new Intent(SignActivity.this, MainActivity.class);
+        Intent intent = new Intent(LogActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_sign);
+        setContentView(R.layout.activity_log);
 
         inputEmail = findViewById(R.id.username);
         inputPassword = findViewById(R.id.password);
-        inputConfirmPassword = findViewById(R.id.confirmPassword);
-        register = findViewById(R.id.register);
         progressDialog = new ProgressDialog(this);
-
+        login = findViewById(R.id.login);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-
-        register.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PerformAuth();
+                performLogin();
             }
         });
-
     }
 
-    private void PerformAuth() {
+    private void performLogin() {
         String email = inputEmail.getText().toString();
         String password = inputPassword.getText().toString();
-        String confirmPassword = inputConfirmPassword.getText().toString();
 
         if(!email.matches(emailPattern)) {
             inputEmail.setError("Enter correct email");
         } else if(password.isEmpty() || password.length() < 6) {
             inputPassword.setError("Enter proper password");
-        } else if (!password.equals(confirmPassword)){
-            inputConfirmPassword.setError("Password fields must match");
         } else {
             progressDialog.setMessage("Please wait");
-            progressDialog.setTitle("Registration");
+            progressDialog.setTitle("Login");
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
 
-            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()) {
+                    if(task.isSuccessful()){
                         progressDialog.dismiss();
-                        Toast.makeText(SignActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                         sendUserToNextActivity();
-                    }else{
-                        progressDialog.dismiss();
-                        Toast.makeText(SignActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                    } else {
+                    progressDialog.dismiss();
+                    Toast.makeText(LogActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
-
     }
 
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(SignActivity.this, HomeActivity.class);
+        Intent intent = new Intent(LogActivity.this, HomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
