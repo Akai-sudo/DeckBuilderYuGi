@@ -5,37 +5,27 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import si.uni_lj.fe.tnuv.deckbuilder.ui.login.loginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView cardName;
+    //Cards[] dobljeneKarte;
+    static Cards[] dobljeneKarte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +34,25 @@ public class MainActivity extends AppCompatActivity {
 
         //textJson = (TextView) findViewById(R.id.tvJsonItem);
 
-        new JsonTask().execute();
+        try {
+            dobljeneKarte = new JsonTask().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //System.out.println(dobljeneKarte[0]);
+        /*for (Cards card: dobljeneKarte)
+        {
+            //System.out.println("NAME :"+card.name+" DESCRIPTION: "+card.desc+"\nATTACK: "+card.atk+" DEFENSE: "+card.def);
+            Log.d("res", card.name);
+        }*/
+        //Cards[] dobitKarte = new Cards[0];
     }
+
+    /*public AsyncTask<String, String, Cards[]> vrniVseKarte() {
+        return dobljeneKarte;
+    }*/
 
     public void loginActivity(View v) {
         Intent intent = new Intent(MainActivity.this, loginActivity.class);
@@ -56,12 +63,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, SignActivity.class);
         startActivity(intent);
     }
+
+    public static Cards[] povrniVseDobljeneKarte() {
+        return dobljeneKarte;
+    }
 }
 
-class JsonTask extends AsyncTask<String, String, String> {
+class JsonTask extends AsyncTask<String, String, Cards[]> {
 
     @Override
-    protected String doInBackground(String... params) {
+    protected Cards[] doInBackground(String... params) {
         try {
             // Create a new HTTP Client
             DefaultHttpClient defaultClient = new DefaultHttpClient();
@@ -81,36 +92,30 @@ class JsonTask extends AsyncTask<String, String, String> {
 
             Cards[] cardsArray = new Gson().fromJson(jsonArry.toString(), Cards[].class);  //json array damo nazaj v string
 
-            //System.out.println(cardsArray.length);
-            //System.out.println(cardsArray[0].name);
-
-            System.out.println(cardsArray.toString());
+            /*System.out.println(cardsArray.toString());
 
             for (Cards card: cardsArray)
             {
                 System.out.println("NAME :"+card.name+" DESCRIPTION: "+card.desc+"\nATTACK: "+card.atk+" DEFENSE: "+card.def);
-            }
-
-            /*for (int i = 0; i < 5; i++) {
-                System.out.println("Name :"+cardsArray[i].name+" desc: "+cardsArray[i].desc);
             }*/
-
-            // Instantiate a JSON object from the request response
-            //JSONObject jsonObject = new JSONObject(json);
-            //System.out.println(jsonObject);
-
+            return cardsArray;
         } catch(Exception e){
             // In your production code handle any errors and catch the individual exceptions
             e.printStackTrace();
         }
-
         return null;
     }
-}
 
-class Cards {
-    String name;
-    String desc;
-    String atk;
-    String def;
+    @Override
+    protected void onPostExecute(Cards[] result) {
+        //do stuff
+        //myMethod(myValue);
+        vrniKarte(result);
+    }
+
+
+    private Cards[] vrniKarte(Cards[] mojeKarte) {
+        //handle value
+        return mojeKarte;
+    }
 }

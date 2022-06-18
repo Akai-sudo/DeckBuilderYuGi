@@ -17,10 +17,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.232"
+        app:layout_constraintVertical_bias="0.063"
         tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <Button
@@ -35,52 +35,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <TextView
-        android:id="@+id/deckBuilder"
-        android:layout_width="230dp"
-        android:layout_height="50dp"
-        android:fontFamily="monospace"
-        android:text="@string/build_deck"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096"
-        tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-    <!--<LinearLayout
-        android:id="@+id/karteLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" />-->
-
     <ScrollView
-        android:id="@+id/containerKart"
-        android:layout_width="406dp"
-        android:layout_height="461dp"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
+        android:layout_width="291dp"
+        android:layout_height="398dp"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/monsterCard">
+        app:layout_constraintTop_toBottomOf="@+id/monsterCard"
+        app:layout_constraintVertical_bias="0.288">
 
         <LinearLayout
-            android:id="@+id/karteLayout"
-            android:gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/ly"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="610dp"
             android:orientation="vertical" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
