@@ -27,16 +27,6 @@ public class LogActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
-    public void homeActivity(View v) {
-        Intent intent = new Intent(LogActivity.this, HomeActivity.class);
-        startActivity(intent);
-    }
-
-    public void mainActivity(View v) {
-        Intent intent = new Intent(LogActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

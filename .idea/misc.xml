@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_buddy.xml" value="0.176" />
+        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/list_item.xml" value="0.10029251984956122" />
         <entry key="app/src/main/res/font/genos.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/activity_add_cards.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_cards2.xml" value="0.146875" />
