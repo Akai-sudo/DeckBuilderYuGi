@@ -96,7 +96,6 @@ class JsonTask extends AsyncTask<String, String, Cards[]> {
             JSONArray jsonArry = jObj.getJSONArray("data");  //dobimo json array k je sparsan data ven
 
             Cards[] cardsArray = new Gson().fromJson(jsonArry.toString(), Cards[].class);  //json array damo nazaj v string
-
             /*System.out.println(cardsArray.toString());
 
             for (Cards card: cardsArray)

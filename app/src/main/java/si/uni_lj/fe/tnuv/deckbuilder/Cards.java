@@ -9,6 +9,10 @@ public class Cards implements Parcelable {
     public String atk;
     public String def;
     public String type;
+    public String level;
+    public String attribute;
+
+    public CardPrice price;
 
     protected Cards(Parcel in) {
         name = in.readString();
@@ -16,6 +20,10 @@ public class Cards implements Parcelable {
         atk = in.readString();
         def = in.readString();
         type = in.readString();
+        level = in.readString();
+        attribute = in.readString();
+
+        //price = in.readTypedObject();
     }
 
     public static final Creator<Cards> CREATOR = new Creator<Cards>() {
@@ -42,5 +50,8 @@ public class Cards implements Parcelable {
         parcel.writeString(atk);
         parcel.writeString(def);
         parcel.writeString(type);
+        parcel.writeString(level);
+        parcel.writeString(attribute);
+        //parcel.writeString(price);
     }
 }
