@@ -1,20 +1,20 @@
 package si.uni_lj.fe.tnuv.deckbuilder;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -49,13 +49,14 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        LinearLayout ll = findViewById(R.id.ly);
 
         listview = findViewById(R.id.listView1);
         addButton = findViewById(R.id.button3);
@@ -75,6 +76,28 @@ public class HomeActivity extends AppCompatActivity {
                 GetValue.setText("");
             }
         });
+
+        if(getIntent().getExtras() != null) {
+            Deck ustvarjenDeck = getIntent().getExtras().getParcelable("newdeck");
+
+            TextView alinejaDecka = new TextView(this);
+            alinejaDecka.setText(ustvarjenDeck.deckName);
+            alinejaDecka.setGravity(Gravity.CENTER);
+            alinejaDecka.setPadding(0, 0, 0, 0);
+
+            ll.addView(alinejaDecka);
+
+            /*alinejaDecka.setOnClickListener(v -> {
+                Intent intent = new Intent(HomeActivity.this, DeckInfo.class);
+                intent.putExtra("key", card);
+                startActivity(intent);
+            });*/
+
+            Log.d("res", ustvarjenDeck.deckName);
+            for (int i = 0; i < ustvarjenDeck.deck.size(); i++) {
+                Log.d("res", "[ "+String.valueOf(ustvarjenDeck.deck.get(i).name+" ]"));
+            }
+        }
     }
 
     private void vpisiVDatoteko(String vsebina){
@@ -121,5 +144,4 @@ public class HomeActivity extends AppCompatActivity {
 
         return vsebina;
     }
-
 }
