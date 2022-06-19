@@ -14,13 +14,12 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutionException;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
-
-//import si.uni_lj.fe.tnuv.deckbuilder.ui.login.loginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,13 +31,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //textJson = (TextView) findViewById(R.id.tvJsonItem);
-
         try {
             dobljeneKarte = new JsonTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         //System.out.println(dobljeneKarte[0]);
@@ -49,15 +44,6 @@ public class MainActivity extends AppCompatActivity {
         }*/
         //Cards[] dobitKarte = new Cards[0];
     }
-
-    /*public AsyncTask<String, String, Cards[]> vrniVseKarte() {
-        return dobljeneKarte;
-    }*/
-
-    /*public void loginActivity(View v) {
-        Intent intent = new Intent(MainActivity.this, loginActivity.class);
-        startActivity(intent);
-    }*/
 
     public void loginActivity(View v) {
         Intent intent = new Intent(MainActivity.this, LogActivity.class);
@@ -87,15 +73,19 @@ class JsonTask extends AsyncTask<String, String, Cards[]> {
             // Execute the request in the client
             HttpResponse httpResponse = defaultClient.execute(httpGetRequest);
             // Grab the response
-            BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), "UTF-8"));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), StandardCharsets.UTF_8));
             String json = reader.readLine(); //sparsano v json string
 
             //Log.d("res", json); //koncno dobis JSON kot raw (json) STRING
 
-            JSONObject jObj = new JSONObject(json);  //ustvarmo json objekt zato da iz json stringa preberemo data k je napisan json objekt
-            JSONArray jsonArry = jObj.getJSONArray("data");  //dobimo json array k je sparsan data ven
+            //ustvarmo json objekt zato da iz json stringa preberemo data k je napisan json objekt
+            JSONObject jObj = new JSONObject(json);
+            //dobimo json array k je sparsan data ven
 
-            Cards[] cardsArray = new Gson().fromJson(jsonArry.toString(), Cards[].class);  //json array damo nazaj v string
+            JSONArray jsonArry = jObj.getJSONArray("data");
+
+            //json array damo nazaj v string
+            Cards[] cardsArray = new Gson().fromJson(jsonArry.toString(), Cards[].class);
             /*System.out.println(cardsArray.toString());
 
             for (Cards card: cardsArray)
