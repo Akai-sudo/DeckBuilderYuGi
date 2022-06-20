@@ -22,10 +22,12 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import si.uni_lj.fe.tnuv.deckbuilder.CardInfo;
@@ -72,33 +74,55 @@ public class DeckActivity extends AppCompatActivity{
         });
 
         novDeck = new Deck(imeDecka);
+        if(novDeck != null) {
+            for (Cards card : karteZaPrikaz) {
+                TextView textView = new TextView(this);
+                textView.setText(card.name);
+                textView.setTypeface(monospace);
+                textView.setGravity(Gravity.CENTER);
+                textView.setPadding(0, 0, 0, 10);
 
-        for (Cards card: karteZaPrikaz)
-        {
-            TextView textView = new TextView(this);
-            textView.setText(card.name);
-            textView.setTypeface(monospace);
-            textView.setGravity(Gravity.CENTER);
-            textView.setPadding(0, 0, 0, 10);
+                textView.setOnClickListener(v -> {
 
-            textView.setOnClickListener(v -> {
+                    Intent intent = new Intent(DeckActivity.this, CardInfo.class);
+                    intent.putExtra("key", card);
+                    startActivity(intent);
+                });
 
-                Intent intent = new Intent(DeckActivity.this, CardInfo.class);
-                intent.putExtra("key", card);
-                startActivity(intent);
-            });
-
-            textView.setOnLongClickListener(v -> {
-                novDeck.deck.add(card);
-                Toast.makeText(DeckActivity.this, "Added "+card.name, Toast.LENGTH_SHORT).show();
-                return true;
-            });
-            ll.addView(textView);
+                textView.setOnLongClickListener(v -> {
+                    novDeck.deck.add(card);
+                    Toast.makeText(DeckActivity.this, "Added " + card.name, Toast.LENGTH_SHORT).show();
+                    return true;
+                });
+                ll.addView(textView);
+            }
         }
     }
 
     public void buildDeck(View v) {
+        //Log.d("deck", "mimimimimomomomo");
         novDeck.deckName = imeDecka;
+
+        /*Gson gson = new Gson();
+        List<Deck> arrayKupcek = new ArrayList<Deck>();
+        arrayKupcek.add(novDeck);
+        String jsonKupckov1 = gson.toJson(arrayKupcek);
+
+        String shranjeniKupcki = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeniKupcki", jsonKupckov1);
+
+        Deck[] mojiKupcki = new Gson().fromJson(shranjeniKupcki, Deck[].class);
+        List<Deck> mojiKupckiList = Arrays.asList(mojiKupcki);
+        mojiKupckiList.add(novDeck);
+
+
+        String jsonKupckov = gson.toJson(mojiKupckiList);
+        Log.d("deck", jsonKupckov);
+
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("shranjeniKupcki", jsonKupckov).apply();*/
+
+        //String jsonDecka = gson.toJson(novDeck);
+        //PreferenceManager.getDefaultSharedPreferences(this).edit().putString("shranjeno", jsonDecka).apply();
+
         //mojiKupcki.add(novDeck);
 
         Gson gson = new Gson();

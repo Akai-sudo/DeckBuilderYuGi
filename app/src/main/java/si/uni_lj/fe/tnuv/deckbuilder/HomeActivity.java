@@ -42,7 +42,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
     Typeface monospace;
-
     public List<Deck> mojiKupcki = new ArrayList<Deck>();
 
     ListView listview;
@@ -99,16 +98,19 @@ public class HomeActivity extends AppCompatActivity {
 
         String dobljeno = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeno", "");
 
+        //String dobljeno = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeniKupcki", "");
+
         Log.d("deck", "on start je bil invociran");
         Log.d("deck", dobljeno);
 
+        //Deck[] myDeck = new Gson().fromJson(dobljeno, Deck[].class);
         Deck myDeck = new Gson().fromJson(dobljeno, Deck.class);
 
         if(myDeck != null) {
 
-            /*for (int i = 0; i < mojiKupcki.size(); i++) {
+            /*for (int i = 0; i < myDeck.length; i++) {
                 TextView alinejaDecka = new TextView(this);
-                alinejaDecka.setText(mojiKupcki.get(i).deckName);
+                alinejaDecka.setText(myDeck[i].deckName);
                 alinejaDecka.setTextSize(18);
                 //alinejaDecka.setTypeface(monospace);
                 alinejaDecka.setGravity(Gravity.START);
