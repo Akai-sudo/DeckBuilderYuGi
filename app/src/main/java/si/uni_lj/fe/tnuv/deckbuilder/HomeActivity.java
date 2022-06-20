@@ -1,10 +1,12 @@
 package si.uni_lj.fe.tnuv.deckbuilder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -39,8 +41,9 @@ import si.uni_lj.fe.tnuv.deckbuilder.deck.DeckActivity;
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
-    Deck ustvarjenDeck;
-    SharedPreferences mPrefs;
+    Typeface monospace;
+
+    public List<Deck> mojiKupcki = new ArrayList<Deck>();
 
     ListView listview;
     Button addButton, btnsignOut;
@@ -63,41 +66,16 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*@Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        // Save UI state changes to the savedInstanceState.
-        // This bundle will be passed to onCreate if the process is
-        // killed and restarted.
-        //savedInstanceState.putBoolean("MyBoolean", true);
-        //savedInstanceState.putAll();
-        savedInstanceState.putParcelable("newdeck", ustvarjenDeck);
-        // etc.
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        ustvarjenDeck = savedInstanceState.getParcelable("newdeck");
-    }*/
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        //mPrefs = getPreferences(Context.MODE_PRIVATE);
-
-        /*if(ustvarjenDeck != null) {
-            ustvarjenDeck = savedInstanceState.getParcelable("newdeck");
-            Log.d("res", ustvarjenDeck.deckName);
-        }*/
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        monospace = Typeface.createFromAsset(getAssets(),
+                "fonts/monospace.bold.ttf");
 
-        LinearLayout ll = findViewById(R.id.ly);
 
         listview = findViewById(R.id.listView1);
         addButton = findViewById(R.id.button3);
@@ -112,17 +90,6 @@ public class HomeActivity extends AppCompatActivity {
             vpisiVDatoteko(vsebina+" \n");
             GetValue.setText("");
         });
-
-        /*Gson gson = new Gson();
-        String json = mPrefs.getString("newdeck", "");
-        Deck shranjenDeck = gson.fromJson(json, Deck.class);
-
-        TextView alinejaDecka1 = new TextView(this);
-        if(shranjenDeck != null) {
-            alinejaDecka1.setText(shranjenDeck.deckName);
-            alinejaDecka1.setTextSize(15);
-            Log.d("deck", shranjenDeck.deckName);
-        }*/
     }
 
     @Override
@@ -138,12 +105,29 @@ public class HomeActivity extends AppCompatActivity {
         Deck myDeck = new Gson().fromJson(dobljeno, Deck.class);
 
         if(myDeck != null) {
+
+            /*for (int i = 0; i < mojiKupcki.size(); i++) {
+                TextView alinejaDecka = new TextView(this);
+                alinejaDecka.setText(mojiKupcki.get(i).deckName);
+                alinejaDecka.setTextSize(18);
+                //alinejaDecka.setTypeface(monospace);
+                alinejaDecka.setGravity(Gravity.START);
+                alinejaDecka.setPadding(0, 0, 0, 0);
+
+                alinejaDecka.setOnClickListener(v -> {
+                    Intent intent = new Intent(HomeActivity.this, DeckInfoActivity.class);
+                    intent.putExtra("deckInfo", myDeck);
+                    startActivity(intent);
+                });
+                ll.addView(alinejaDecka);
+            }*/
+
             TextView alinejaDecka = new TextView(this);
-            alinejaDecka.setText(myDeck.deckName);
-            alinejaDecka.setTextSize(15);
-            //alinejaDecka.setTypeface(monospace);
+            alinejaDecka.setText(myDeck.deckName+" deck");
+            alinejaDecka.setTextSize(19);
+            alinejaDecka.setTypeface(monospace);
             alinejaDecka.setGravity(Gravity.START);
-            alinejaDecka.setPadding(0, 0, 0, 0);
+            alinejaDecka.setPadding(19, 15, 0, 0);
 
             alinejaDecka.setOnClickListener(v -> {
                 Intent intent = new Intent(HomeActivity.this, DeckInfoActivity.class);

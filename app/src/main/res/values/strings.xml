@@ -6,11 +6,11 @@
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome "</string>
-    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_username">Not a valid Email</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-    <string name="signup_username">Username</string>
+    <string name="signup_username">Email</string>
     <string name="confirm_password">Confirm password</string>
     <string name="signup_user">SIGN UP</string>
     <string name="login_user">LOGIN</string>

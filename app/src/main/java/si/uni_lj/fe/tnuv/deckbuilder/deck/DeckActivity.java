@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
@@ -42,12 +43,15 @@ public class DeckActivity extends AppCompatActivity{
     Deck novDeck;
     String imeDecka;
     SharedPreferences mPrefs;
+    Typeface monospace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPrefs = getPreferences(MODE_PRIVATE);
         setContentView(R.layout.activity_deck);
+        monospace = Typeface.createFromAsset(getAssets(),
+                "fonts/monospace.bold.ttf");
 
         karteZaPrikaz = MainActivity.povrniVseDobljeneKarte();
         LinearLayout ll = findViewById(R.id.ly);
@@ -73,6 +77,7 @@ public class DeckActivity extends AppCompatActivity{
         {
             TextView textView = new TextView(this);
             textView.setText(card.name);
+            textView.setTypeface(monospace);
             textView.setGravity(Gravity.CENTER);
             textView.setPadding(0, 0, 0, 10);
 
@@ -94,6 +99,7 @@ public class DeckActivity extends AppCompatActivity{
 
     public void buildDeck(View v) {
         novDeck.deckName = imeDecka;
+        //mojiKupcki.add(novDeck);
 
         Gson gson = new Gson();
         String jsonDecka = gson.toJson(novDeck);
