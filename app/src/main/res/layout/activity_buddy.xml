@@ -7,31 +7,14 @@
     android:background="#838BC2"
     tools:context=".BuddyActivity">
 
-    <TextView
-        android:id="@+id/Buddy"
-        android:layout_width="144dp"
-        android:layout_height="32dp"
-        android:fontFamily="monospace"
-        android:text="@string/buddy"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066"
-        tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleViewer"
+        android:id="@+id/recycleView"
         android:layout_width="409dp"
         android:layout_height="726dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Buddy" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

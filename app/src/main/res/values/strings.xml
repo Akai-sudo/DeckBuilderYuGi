@@ -32,6 +32,8 @@
     <string name="share">Share</string>
     <string name="add_buddy">Add buddy</string>
     <string name="my_buddy">Details</string>
+    <string name="buddy_details">Buddy details</string>
+
 
     <string name="deckNameInput">Name your deck</string>
 
