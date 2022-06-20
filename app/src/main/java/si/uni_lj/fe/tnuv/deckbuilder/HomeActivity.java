@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -31,13 +33,16 @@ public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
 
     ListView listview;
-    Button addButton;
+    Button addButton, btnsignOut;
     EditText GetValue;
     String[] ListElements = new String[] {
             "MY BUDDIES:"
     };
 
+    //FirebaseAuth mAuth;
+
     private String filename = "vsebina.txt";
+
 
     public void deckActivity(View v) {
         Intent intent = new Intent(HomeActivity.this, DeckActivity.class);
@@ -62,11 +67,9 @@ public class HomeActivity extends AppCompatActivity {
         listview = findViewById(R.id.listView1);
         addButton = findViewById(R.id.button3);
         GetValue = findViewById(R.id.editTextTextPersonName);
+        btnsignOut = findViewById(R.id.btnSignOut);
 
-        final List<String> ListElementsArrayList = new ArrayList<>(Arrays.asList(ListElements));
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>
-                (HomeActivity.this, android.R.layout.simple_list_item_1, ListElementsArrayList);
-        listview.setAdapter(adapter);
+        prikazi(this);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +104,23 @@ public class HomeActivity extends AppCompatActivity {
                 Log.d("res", "[ "+String.valueOf(ustvarjenDeck.deck.get(i).name+" ]"));
             }*/
         }
+
+        btnsignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //mAuth.signOut();
+                signOutUser();
+            }
+        });
+
+
+    }
+
+    private void signOutUser() {
+        Intent mainActivity = new Intent(HomeActivity.this, MainActivity.class);
+        //mainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mainActivity);
+        //finish();
     }
 
     private void vpisiVDatoteko(String vsebina){

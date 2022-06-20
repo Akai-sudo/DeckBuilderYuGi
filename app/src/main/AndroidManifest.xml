@@ -38,6 +38,7 @@
             android:name=".HomeActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.DeckBuilder.NoActionBar"
             android:parentActivityName=".SignActivity" />
         <activity
             android:name=".SignActivity"
