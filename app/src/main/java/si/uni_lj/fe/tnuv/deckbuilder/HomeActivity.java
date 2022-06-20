@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -17,6 +19,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,6 +39,8 @@ import si.uni_lj.fe.tnuv.deckbuilder.deck.DeckActivity;
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
+    Deck ustvarjenDeck;
+    SharedPreferences mPrefs;
 
     ListView listview;
     Button addButton, btnsignOut;
@@ -43,7 +53,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private String filename = "vsebina.txt";
 
-
     public void deckActivity(View v) {
         Intent intent = new Intent(HomeActivity.this, DeckActivity.class);
         startActivity(intent);
@@ -54,13 +63,39 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /*@Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        //savedInstanceState.putBoolean("MyBoolean", true);
+        //savedInstanceState.putAll();
+        savedInstanceState.putParcelable("newdeck", ustvarjenDeck);
+        // etc.
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        ustvarjenDeck = savedInstanceState.getParcelable("newdeck");
+    }*/
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        //mPrefs = getPreferences(Context.MODE_PRIVATE);
+
+        /*if(ustvarjenDeck != null) {
+            ustvarjenDeck = savedInstanceState.getParcelable("newdeck");
+            Log.d("res", ustvarjenDeck.deckName);
+        }*/
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         LinearLayout ll = findViewById(R.id.ly);
 
@@ -71,38 +106,52 @@ public class HomeActivity extends AppCompatActivity {
 
         prikazi(this);
 
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String vsebina = GetValue.getText().toString();
+        addButton.setOnClickListener(v -> {
+            String vsebina = GetValue.getText().toString();
 
-                vpisiVDatoteko(vsebina+" \n");
-                GetValue.setText("");
-            }
+            vpisiVDatoteko(vsebina+" \n");
+            GetValue.setText("");
         });
 
-        if(getIntent().getExtras() != null) {
-            Deck ustvarjenDeck = getIntent().getExtras().getParcelable("newdeck");
+        /*Gson gson = new Gson();
+        String json = mPrefs.getString("newdeck", "");
+        Deck shranjenDeck = gson.fromJson(json, Deck.class);
 
+        TextView alinejaDecka1 = new TextView(this);
+        if(shranjenDeck != null) {
+            alinejaDecka1.setText(shranjenDeck.deckName);
+            alinejaDecka1.setTextSize(15);
+            Log.d("deck", shranjenDeck.deckName);
+        }*/
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LinearLayout ll = findViewById(R.id.ly);
+
+        String dobljeno = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeno", "");
+
+        Log.d("deck", "on start je bil invociran");
+        Log.d("deck", dobljeno);
+
+        Deck myDeck = new Gson().fromJson(dobljeno, Deck.class);
+
+        if(myDeck != null) {
             TextView alinejaDecka = new TextView(this);
-            alinejaDecka.setText(ustvarjenDeck.deckName);
+            alinejaDecka.setText(myDeck.deckName);
             alinejaDecka.setTextSize(15);
             //alinejaDecka.setTypeface(monospace);
             alinejaDecka.setGravity(Gravity.START);
             alinejaDecka.setPadding(0, 0, 0, 0);
 
-            ll.addView(alinejaDecka);
-
             alinejaDecka.setOnClickListener(v -> {
                 Intent intent = new Intent(HomeActivity.this, DeckInfoActivity.class);
-                intent.putExtra("deckInfo", ustvarjenDeck);
+                intent.putExtra("deckInfo", myDeck);
                 startActivity(intent);
             });
 
-            /*Log.d("res", ustvarjenDeck.deckName);
-            for (int i = 0; i < ustvarjenDeck.deck.size(); i++) {
-                Log.d("res", "[ "+String.valueOf(ustvarjenDeck.deck.get(i).name+" ]"));
-            }*/
+            ll.addView(alinejaDecka);
         }
 
         btnsignOut.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +161,6 @@ public class HomeActivity extends AppCompatActivity {
                 signOutUser();
             }
         });
-
 
     }
 

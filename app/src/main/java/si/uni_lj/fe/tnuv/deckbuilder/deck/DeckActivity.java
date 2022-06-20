@@ -3,8 +3,10 @@ package si.uni_lj.fe.tnuv.deckbuilder.deck;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -18,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -37,10 +41,12 @@ public class DeckActivity extends AppCompatActivity{
     static Cards[] karteZaPrikaz;
     Deck novDeck;
     String imeDecka;
+    SharedPreferences mPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mPrefs = getPreferences(MODE_PRIVATE);
         setContentView(R.layout.activity_deck);
 
         karteZaPrikaz = MainActivity.povrniVseDobljeneKarte();
@@ -88,6 +94,12 @@ public class DeckActivity extends AppCompatActivity{
 
     public void buildDeck(View v) {
         novDeck.deckName = imeDecka;
+
+        Gson gson = new Gson();
+        String jsonDecka = gson.toJson(novDeck);
+
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("shranjeno", jsonDecka).apply();
+
         Intent intent = new Intent(DeckActivity.this, HomeActivity.class);
         intent.putExtra("newdeck", novDeck);
         startActivity(intent);

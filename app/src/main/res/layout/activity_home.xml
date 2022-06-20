@@ -47,26 +47,48 @@
         app:layout_constraintVertical_bias="0.172"
         tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-    <LinearLayout
+    <!--<LinearLayout
         android:id="@+id/ly"
         android:layout_width="323dp"
         android:layout_height="160dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295">
+    </LinearLayout>-->
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="283dp"
+        android:layout_height="140dp"
         android:fontFamily="monospace"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295"></LinearLayout>
+        app:layout_constraintVertical_bias="0.318">
+
+        <LinearLayout
+            android:id="@+id/ly"
+            android:layout_width="match_parent"
+            android:layout_height="610dp"
+            android:orientation="vertical" />
+    </ScrollView>
 
     <Button
         android:id="@+id/create"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
         android:onClick="deckActivity"
         android:text="@string/create"
+        android:fontFamily="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
@@ -83,37 +105,38 @@
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ly"
+        app:layout_constraintTop_toTopOf="@+id/sv"
         app:layout_constraintVertical_bias="0.403" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="115dp"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
         android:paddingRight="10dp"
         android:text="@string/add_buddy"
+        android:fontFamily="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ly"
+        app:layout_constraintTop_toTopOf="@+id/sv"
         app:layout_constraintVertical_bias="0.405" />
 
     <ListView
         android:id="@+id/listView1"
         android:layout_width="wrap_content"
         android:layout_height="145dp"
-        android:fontFamily="monospace"
         android:gravity="center"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:fontFamily="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843"></ListView>
+        app:layout_constraintVertical_bias="0.843">
+    </ListView>
 
     <Button
         android:id="@+id/button6"

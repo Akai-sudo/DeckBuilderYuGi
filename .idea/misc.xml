@@ -10,6 +10,7 @@
         <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/item.xml" value="0.2" />
         <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/list_item.xml" value="0.10029251984956122" />
         <entry key="app/src/main/res/font/genos.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/font/monospace.xml" value="0.4265625" />
         <entry key="app/src/main/res/layout/activity_add_cards.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_cards2.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_buddy.xml" value="0.1" />
@@ -18,7 +19,7 @@
         <entry key="app/src/main/res/layout/activity_deck.xml" value="0.20330505371093754" />
         <entry key="app/src/main/res/layout/activity_deck2.xml" value="0.14739583333333334" />
         <entry key="app/src/main/res/layout/activity_deck_info.xml" value="0.1953125" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.21440887451171864" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2664202210531069" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24582519531250002" />
         <entry key="app/src/main/res/layout/activity_sign.xml" value="0.24998173428644646" />
