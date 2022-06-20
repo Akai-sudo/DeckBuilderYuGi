@@ -4,8 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_buddy.xml" value="0.176" />
-        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_log.xml" value="0.15006412997007268" />
+        <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/item.xml" value="0.1" />
         <entry key="..\:/Users/Ana/AndroidStudioProjects/DeckBuilderYuGi/app/src/main/res/layout/list_item.xml" value="0.10029251984956122" />
@@ -17,7 +16,7 @@
         <entry key="app/src/main/res/layout/activity_card_info.xml" value="0.2921005249023438" />
         <entry key="app/src/main/res/layout/activity_deck.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_deck2.xml" value="0.14739583333333334" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.17586669921875003" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.21440887451171864" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2664202210531069" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24582519531250002" />
         <entry key="app/src/main/res/layout/activity_sign.xml" value="0.24998173428644646" />
