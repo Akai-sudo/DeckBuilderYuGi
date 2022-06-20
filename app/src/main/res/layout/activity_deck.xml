@@ -60,6 +60,7 @@
         android:layout_width="170dp"
         android:layout_height="53dp"
         android:ems="10"
+        android:fontFamily="monospace"
         android:hint="@string/deckNameInput"
         android:inputType="textPersonName"
         android:typeface="monospace"
