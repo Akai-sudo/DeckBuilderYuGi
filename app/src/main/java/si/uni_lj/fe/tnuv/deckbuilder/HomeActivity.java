@@ -83,21 +83,23 @@ public class HomeActivity extends AppCompatActivity {
 
             TextView alinejaDecka = new TextView(this);
             alinejaDecka.setText(ustvarjenDeck.deckName);
-            alinejaDecka.setGravity(Gravity.CENTER);
+            alinejaDecka.setTextSize(15);
+            //alinejaDecka.setTypeface(monospace);
+            alinejaDecka.setGravity(Gravity.START);
             alinejaDecka.setPadding(0, 0, 0, 0);
 
             ll.addView(alinejaDecka);
 
-            /*alinejaDecka.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, DeckInfo.class);
-                intent.putExtra("key", card);
+            alinejaDecka.setOnClickListener(v -> {
+                Intent intent = new Intent(HomeActivity.this, DeckInfoActivity.class);
+                intent.putExtra("deckInfo", ustvarjenDeck);
                 startActivity(intent);
-            });*/
+            });
 
-            Log.d("res", ustvarjenDeck.deckName);
+            /*Log.d("res", ustvarjenDeck.deckName);
             for (int i = 0; i < ustvarjenDeck.deck.size(); i++) {
                 Log.d("res", "[ "+String.valueOf(ustvarjenDeck.deck.get(i).name+" ]"));
-            }
+            }*/
         }
     }
 

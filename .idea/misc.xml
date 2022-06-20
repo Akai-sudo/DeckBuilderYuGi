@@ -14,8 +14,9 @@
         <entry key="app/src/main/res/layout/activity_buddy.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_buddy2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_card_info.xml" value="0.2921005249023438" />
-        <entry key="app/src/main/res/layout/activity_deck.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_deck.xml" value="0.20330505371093754" />
         <entry key="app/src/main/res/layout/activity_deck2.xml" value="0.14739583333333334" />
+        <entry key="app/src/main/res/layout/activity_deck_info.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.21440887451171864" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2664202210531069" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24582519531250002" />

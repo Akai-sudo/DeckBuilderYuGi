@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -32,8 +35,6 @@ import si.uni_lj.fe.tnuv.deckbuilder.R;
 public class DeckActivity extends AppCompatActivity{
 
     static Cards[] karteZaPrikaz;
-    static List<Cards> kupcek = new ArrayList<Cards>();
-
     Deck novDeck;
     String imeDecka;
 
@@ -45,7 +46,21 @@ public class DeckActivity extends AppCompatActivity{
         karteZaPrikaz = MainActivity.povrniVseDobljeneKarte();
         LinearLayout ll = findViewById(R.id.ly);
 
-        imeDecka = "Deck.001";
+        EditText vnesenoIme = (EditText) findViewById(R.id.vnosImena);
+
+        vnesenoIme.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                imeDecka = vnesenoIme.getText().toString();
+            }
+        });
+
         novDeck = new Deck(imeDecka);
 
         for (Cards card: karteZaPrikaz)
@@ -72,6 +87,7 @@ public class DeckActivity extends AppCompatActivity{
     }
 
     public void buildDeck(View v) {
+        novDeck.deckName = imeDecka;
         Intent intent = new Intent(DeckActivity.this, HomeActivity.class);
         intent.putExtra("newdeck", novDeck);
         startActivity(intent);

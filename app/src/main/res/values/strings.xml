@@ -33,6 +33,8 @@
     <string name="add_buddy">Add buddy</string>
     <string name="my_buddy">Details</string>
 
+    <string name="deckNameInput">Name your deck</string>
+
     <string name="new_deck">New Deck</string>
     <string name="add">Add</string>
     <string name="delete">Delete</string>

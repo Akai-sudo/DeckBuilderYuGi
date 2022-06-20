@@ -9,48 +9,47 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DeckBuilder">
-
+        <activity
+            android:name=".DeckInfoActivity"
+            android:exported="false"
+            android:parentActivityName=".HomeActivity"/>
         <activity
             android:name=".CardInfo"
             android:exported="false"
-            android:parentActivityName=".deck.DeckActivity"/>
-
+            android:parentActivityName=".deck.DeckActivity" />
         <activity
             android:name=".LogActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
-
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".deck.AddCardsActivity"
             android:exported="false"
             android:parentActivityName=".deck.DeckActivity" />
-
         <activity
             android:name=".BuddyActivity"
             android:exported="false"
             android:parentActivityName=".HomeActivity" />
-
         <activity
             android:name=".deck.DeckActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustPan"
             android:parentActivityName=".HomeActivity" />
-
         <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:parentActivityName=".SignActivity"/>
-
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName=".SignActivity" />
         <activity
             android:name=".SignActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.DeckBuilder.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

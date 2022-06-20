@@ -17,10 +17,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063"
+        app:layout_constraintVertical_bias="0.046"
         tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <Button
@@ -37,6 +37,7 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="291dp"
         android:layout_height="398dp"
         android:layout_margin="16dp"
@@ -45,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monsterCard"
-        app:layout_constraintVertical_bias="0.288">
+        app:layout_constraintVertical_bias="0.477">
 
         <LinearLayout
             android:id="@+id/ly"
@@ -53,4 +54,19 @@
             android:layout_height="610dp"
             android:orientation="vertical" />
     </ScrollView>
+
+    <EditText
+        android:id="@+id/vnosImena"
+        android:layout_width="170dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:hint="@string/deckNameInput"
+        android:inputType="textPersonName"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 </androidx.constraintlayout.widget.ConstraintLayout>
