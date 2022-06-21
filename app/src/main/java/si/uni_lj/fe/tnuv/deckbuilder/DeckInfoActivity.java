@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -51,7 +52,8 @@ public class DeckInfoActivity extends AppCompatActivity {
             TextView karta = new TextView(this);
             karta.setTypeface(monospace);
             karta.setTextSize(20);
-            karta.setPadding(0,10,0,0);
+            karta.setPadding(0,10,0,10);
+            karta.setGravity(Gravity.CENTER);
             karta.setText(ustvarjenDeck.deck.get(i).name);
 
             final int trenutniindeks = i;

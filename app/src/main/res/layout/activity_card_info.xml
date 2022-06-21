@@ -25,36 +25,23 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="299dp"
-        android:layout_height="250dp"
+        android:layout_width="308dp"
+        android:layout_height="390dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardName"
-        app:layout_constraintVertical_bias="0.26">
+        app:layout_constraintVertical_bias="0.301">
 
         <TextView
             android:id="@+id/cardDescription"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:justificationMode="inter_word"
-            android:padding="10dp"
-            android:typeface="monospace"
-            android:text="TextView" />
+            android:text="TextView"
+            android:typeface="monospace" />
     </ScrollView>
-
-    <!--<TextView
-        android:id="@+id/cardLevel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardName"
-        app:layout_constraintVertical_bias="0.259" />-->
 
     <TextView
         android:id="@+id/cardType"
@@ -85,9 +72,10 @@
         android:typeface="monospace"
         app:layout_constraintBottom_toTopOf="@+id/ATK"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.698" />
+        app:layout_constraintVertical_bias="0.126" />
 
     <TextView
         android:id="@+id/DEF"
@@ -99,10 +87,10 @@
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintHorizontal_bias="0.767"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.908" />
+        app:layout_constraintVertical_bias="0.915" />
 
     <TextView
         android:id="@+id/ATK"
@@ -114,9 +102,9 @@
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintHorizontal_bias="0.254"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.908" />
+        app:layout_constraintVertical_bias="0.915" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
