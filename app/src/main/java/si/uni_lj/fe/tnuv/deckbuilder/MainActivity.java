@@ -68,8 +68,6 @@ class JsonTask extends AsyncTask<String, String, Cards[]> {
             BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), StandardCharsets.UTF_8));
             String json = reader.readLine(); //sparsano v json string
 
-            //Log.d("res", json); //koncno dobis JSON kot raw (json) STRING
-
             //ustvarmo json objekt zato da iz json stringa preberemo data k je napisan json objekt
             JSONObject jObj = new JSONObject(json);
             //dobimo json array k je sparsan data ven
@@ -80,7 +78,6 @@ class JsonTask extends AsyncTask<String, String, Cards[]> {
             Cards[] cardsArray = new Gson().fromJson(jsonArry.toString(), Cards[].class);
             return cardsArray;
         } catch(Exception e){
-            // In your production code handle any errors and catch the individual exceptions
             e.printStackTrace();
         }
         return null;
@@ -93,7 +90,6 @@ class JsonTask extends AsyncTask<String, String, Cards[]> {
 
 
     private Cards[] vrniKarte(Cards[] mojeKarte) {
-        //handle value
         return mojeKarte;
     }
 }

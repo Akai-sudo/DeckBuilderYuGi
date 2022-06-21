@@ -39,12 +39,7 @@ public class LogActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                performLogin();
-            }
-        });
+        login.setOnClickListener(view -> performLogin());
     }
 
     private void performLogin() {

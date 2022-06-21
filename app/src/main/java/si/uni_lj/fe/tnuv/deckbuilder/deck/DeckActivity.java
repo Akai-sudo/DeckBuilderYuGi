@@ -124,12 +124,6 @@ public class DeckActivity extends AppCompatActivity{
         //Log.d("deck", jsonKupckov);
         PreferenceManager.getDefaultSharedPreferences(this).edit().putString("shranjeniKupcki", jsonKupckov).apply();
 
-        //String jsonDecka = gson.toJson(novDeck);
-        //PreferenceManager.getDefaultSharedPreferences(this).edit().putString("shranjeno", jsonDecka).apply();
-        //mojiKupcki.add(novDeck);
-        /*Gson gson = new Gson();
-        String jsonDecka = gson.toJson(novDeck);
-        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("shranjeno", jsonDecka).apply();*/
 
         Intent intent = new Intent(DeckActivity.this, HomeActivity.class);
         intent.putExtra("newdeck", novDeck);

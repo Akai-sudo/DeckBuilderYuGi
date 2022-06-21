@@ -58,20 +58,17 @@ public class DeckInfoActivity extends AppCompatActivity {
 
             final int trenutniindeks = i;
 
-            karta.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(DeckInfoActivity.this, CardInfo.class);
-                    Cards trenutnaKarta = ustvarjenDeck.deck.get(trenutniindeks);
-                    intent.putExtra("key", trenutnaKarta);
-                    startActivity(intent);
-                }
+            karta.setOnClickListener(view -> {
+                Intent intent = new Intent(DeckInfoActivity.this, CardInfo.class);
+                Cards trenutnaKarta = ustvarjenDeck.deck.get(trenutniindeks);
+                intent.putExtra("key", trenutnaKarta);
+                startActivity(intent);
             });
             seznam.addView(karta);
 
             karta.setOnLongClickListener(v -> {
                 //Gson gson = new Gson();
-                //ustvarjenDeck[trenutniindeks].re
+                //ustvarjenDeck[trenutniindeks].remove();
                 //List<Deck> mojKupcek = Lists.newArrayList(ustvarjenDeck);
                 ustvarjenDeck.deck.remove(trenutniindeks);
 

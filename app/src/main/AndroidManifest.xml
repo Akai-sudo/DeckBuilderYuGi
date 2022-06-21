@@ -22,10 +22,6 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".deck.AddCardsActivity"
-            android:exported="false"
-            android:parentActivityName=".deck.DeckActivity" />
-        <activity
             android:name=".BuddyActivity"
             android:exported="false"
             android:parentActivityName=".HomeActivity" />

@@ -103,9 +103,6 @@ public class HomeActivity extends AppCompatActivity {
             dobljeno = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeniKupcki", "");
         }
 
-        //Log.d("deck", "on start je bil invociran");
-        //Log.d("deck", dobljeno);
-
         Deck[] myDeck = new Gson().fromJson(dobljeno, Deck[].class);
         //Deck myDeck = new Gson().fromJson(dobljeno, Deck.class);
 
@@ -147,21 +144,16 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
 
-        btnsignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //mAuth.signOut();
-                signOutUser();
-            }
+        btnsignOut.setOnClickListener(view -> {
+            //mAuth.signOut();
+            signOutUser();
         });
 
     }
 
     private void signOutUser() {
         Intent mainActivity = new Intent(HomeActivity.this, MainActivity.class);
-        //mainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(mainActivity);
-        //finish();
     }
 
     private void vpisiVDatoteko(String vsebina){
