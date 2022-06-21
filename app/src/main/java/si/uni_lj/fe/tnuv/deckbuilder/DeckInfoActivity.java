@@ -5,11 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.common.collect.Lists;
+import com.google.gson.Gson;
 
 import org.w3c.dom.Text;
+
+import java.util.List;
 
 import si.uni_lj.fe.tnuv.deckbuilder.deck.DeckActivity;
 
@@ -17,6 +24,7 @@ public class DeckInfoActivity extends AppCompatActivity {
 
     TextView imeDecka, steviloKart;
     Typeface monospace;
+    int numOfCards = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +34,10 @@ public class DeckInfoActivity extends AppCompatActivity {
                 "fonts/monospace.bold.ttf");
 
         Deck ustvarjenDeck = getIntent().getExtras().getParcelable("deckInfo");
-        int numOfCards = ustvarjenDeck.deck.size();
+        if(ustvarjenDeck != null && ustvarjenDeck.deck != null) {
+            numOfCards = ustvarjenDeck.deck.size();
+        }
+
 
         steviloKart = findViewById(R.id.num);
         steviloKart.setText("Number of cards: "+numOfCards);
@@ -54,15 +65,18 @@ public class DeckInfoActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-
-            /*karta.setOnClickListener(v -> {
-                Intent intent = new Intent(DeckInfoActivity.this, CardInfo.class);
-                intent.putExtra("key", ustvarjenDeck.deck.get(i));
-                startActivity(intent);
-            });*/
-
             seznam.addView(karta);
-        }
 
+            karta.setOnLongClickListener(v -> {
+                //Gson gson = new Gson();
+                //ustvarjenDeck[trenutniindeks].re
+                //List<Deck> mojKupcek = Lists.newArrayList(ustvarjenDeck);
+                ustvarjenDeck.deck.remove(trenutniindeks);
+
+                seznam.removeView(karta);
+                //Toast.makeText(HomeActivity.this, "Removed " + myDeck[trenutniindeks].deckName+" deck from arsenal", Toast.LENGTH_SHORT).show();
+                return true;
+            });
+        }
     }
 }

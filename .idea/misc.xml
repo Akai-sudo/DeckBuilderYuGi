@@ -13,19 +13,20 @@
         <entry key="app/src/main/res/font/monospace.xml" value="0.4265625" />
         <entry key="app/src/main/res/layout/activity_add_cards.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_cards2.xml" value="0.146875" />
-        <entry key="app/src/main/res/layout/activity_buddy.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_buddy.xml" value="0.2576080322265625" />
         <entry key="app/src/main/res/layout/activity_buddy2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_card_info.xml" value="0.2921005249023438" />
         <entry key="app/src/main/res/layout/activity_deck.xml" value="0.20330505371093754" />
         <entry key="app/src/main/res/layout/activity_deck2.xml" value="0.14739583333333334" />
         <entry key="app/src/main/res/layout/activity_deck_info.xml" value="0.23137359619140627" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2664202210531069" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24582519531250002" />
         <entry key="app/src/main/res/layout/activity_sign.xml" value="0.24998173428644646" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/content_signup.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/layout/item.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/banner.xml" value="0.16" />
       </map>
     </option>

@@ -23,7 +23,6 @@ import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Cards[] dobljeneKarte;
     static Cards[] dobljeneKarte;
 
     @Override
@@ -36,13 +35,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
-        //System.out.println(dobljeneKarte[0]);
-        /*for (Cards card: dobljeneKarte)
-        {
-            //System.out.println("NAME :"+card.name+" DESCRIPTION: "+card.desc+"\nATTACK: "+card.atk+" DEFENSE: "+card.def);
-            Log.d("res", card.name);
-        }*/
-        //Cards[] dobitKarte = new Cards[0];
     }
 
     public void loginActivity(View v) {
@@ -86,12 +78,6 @@ class JsonTask extends AsyncTask<String, String, Cards[]> {
 
             //json array damo nazaj v string
             Cards[] cardsArray = new Gson().fromJson(jsonArry.toString(), Cards[].class);
-            /*System.out.println(cardsArray.toString());
-
-            for (Cards card: cardsArray)
-            {
-                System.out.println("NAME :"+card.name+" DESCRIPTION: "+card.desc+"\nATTACK: "+card.atk+" DEFENSE: "+card.def);
-            }*/
             return cardsArray;
         } catch(Exception e){
             // In your production code handle any errors and catch the individual exceptions
@@ -102,8 +88,6 @@ class JsonTask extends AsyncTask<String, String, Cards[]> {
 
     @Override
     protected void onPostExecute(Cards[] result) {
-        //do stuff
-        //myMethod(myValue);
         vrniKarte(result);
     }
 

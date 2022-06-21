@@ -20,6 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.common.collect.Lists;
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.gson.Gson;
@@ -42,13 +43,12 @@ public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
     Typeface monospace;
-    public List<Deck> mojiKupcki = new ArrayList<Deck>();
 
     ListView listview;
     Button addButton, btnsignOut;
     EditText GetValue;
     String[] ListElements = new String[] {
-            "MY BUDDIES:"
+            "My Buddies"
     };
 
     //FirebaseAuth mAuth;
@@ -71,6 +71,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         monospace = Typeface.createFromAsset(getAssets(),
                 "fonts/monospace.bold.ttf");
@@ -95,49 +96,55 @@ public class HomeActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         LinearLayout ll = findViewById(R.id.ly);
+        String dobljeno = "";
 
-        String dobljeno = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeno", "");
+        //String dobljeno = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeno", "");
+        if(PreferenceManager.getDefaultSharedPreferences(this) != null) {
+            dobljeno = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeniKupcki", "");
+        }
 
-        //String dobljeno = PreferenceManager.getDefaultSharedPreferences(this).getString("shranjeniKupcki", "");
+        //Log.d("deck", "on start je bil invociran");
+        //Log.d("deck", dobljeno);
 
-        Log.d("deck", "on start je bil invociran");
-        Log.d("deck", dobljeno);
-
-        //Deck[] myDeck = new Gson().fromJson(dobljeno, Deck[].class);
-        Deck myDeck = new Gson().fromJson(dobljeno, Deck.class);
+        Deck[] myDeck = new Gson().fromJson(dobljeno, Deck[].class);
+        //Deck myDeck = new Gson().fromJson(dobljeno, Deck.class);
 
         if(myDeck != null) {
+            for (int i = 0; i < myDeck.length; i++) {
+                if(myDeck[i] != null) {
+                    TextView alinejaDecka = new TextView(this);
+                    alinejaDecka.setText(myDeck[i].deckName);
+                    alinejaDecka.setTextSize(18);
+                    alinejaDecka.setTypeface(monospace);
+                    alinejaDecka.setGravity(Gravity.START);
+                    alinejaDecka.setPadding(19, 15, 0, 0);
 
-            /*for (int i = 0; i < myDeck.length; i++) {
-                TextView alinejaDecka = new TextView(this);
-                alinejaDecka.setText(myDeck[i].deckName);
-                alinejaDecka.setTextSize(18);
-                //alinejaDecka.setTypeface(monospace);
-                alinejaDecka.setGravity(Gravity.START);
-                alinejaDecka.setPadding(0, 0, 0, 0);
+                    final int trenutniindeks = i;
 
-                alinejaDecka.setOnClickListener(v -> {
-                    Intent intent = new Intent(HomeActivity.this, DeckInfoActivity.class);
-                    intent.putExtra("deckInfo", myDeck);
-                    startActivity(intent);
+                    alinejaDecka.setOnClickListener(v -> {
+                        Intent intent = new Intent(HomeActivity.this, DeckInfoActivity.class);
+                        intent.putExtra("deckInfo", myDeck[trenutniindeks]);
+                        startActivity(intent);
+                    });
+
+                    ll.addView(alinejaDecka);
+                    //Deck removal
+                alinejaDecka.setOnLongClickListener(v -> {
+                    Gson gson = new Gson();
+
+                    List<Deck> mojiKupckiList = Lists.newArrayList(myDeck);
+                    mojiKupckiList.remove(myDeck[trenutniindeks]);
+
+                    String jsonKupckov = gson.toJson(mojiKupckiList);
+
+                    PreferenceManager.getDefaultSharedPreferences(this).edit().putString("shranjeniKupcki", jsonKupckov).apply();
+
+                    ll.removeView(alinejaDecka);
+                    Toast.makeText(HomeActivity.this, "Removed " + myDeck[trenutniindeks].deckName+" deck from Arsenal", Toast.LENGTH_SHORT).show();
+                    return true;
                 });
-                ll.addView(alinejaDecka);
-            }*/
-
-            TextView alinejaDecka = new TextView(this);
-            alinejaDecka.setText(myDeck.deckName+" deck");
-            alinejaDecka.setTextSize(19);
-            alinejaDecka.setTypeface(monospace);
-            alinejaDecka.setGravity(Gravity.START);
-            alinejaDecka.setPadding(19, 15, 0, 0);
-
-            alinejaDecka.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, DeckInfoActivity.class);
-                intent.putExtra("deckInfo", myDeck);
-                startActivity(intent);
-            });
-
-            ll.addView(alinejaDecka);
+                }
+            }
         }
 
         btnsignOut.setOnClickListener(new View.OnClickListener() {
