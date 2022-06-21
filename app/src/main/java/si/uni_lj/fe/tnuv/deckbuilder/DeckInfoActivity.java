@@ -31,7 +31,7 @@ public class DeckInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deck_info);
         monospace = Typeface.createFromAsset(getAssets(),
-                "fonts/monospace.bold.ttf");
+                "fonts/DroidSansMono.ttf");
 
         Deck ustvarjenDeck = getIntent().getExtras().getParcelable("deckInfo");
         if(ustvarjenDeck != null && ustvarjenDeck.deck != null) {

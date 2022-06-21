@@ -38,15 +38,15 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="291dp"
-        android:layout_height="398dp"
+        android:layout_width="307dp"
+        android:layout_height="599dp"
         android:layout_margin="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monsterCard"
-        app:layout_constraintVertical_bias="0.477">
+        app:layout_constraintVertical_bias="0.308">
 
         <LinearLayout
             android:id="@+id/ly"
@@ -66,8 +66,8 @@
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintHorizontal_bias="0.784"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.019" />
 </androidx.constraintlayout.widget.ConstraintLayout>

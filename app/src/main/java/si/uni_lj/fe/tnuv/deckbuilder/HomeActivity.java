@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -72,9 +73,8 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         monospace = Typeface.createFromAsset(getAssets(),
-                "fonts/monospace.bold.ttf");
+                "fonts/DroidSansMono.ttf");
 
 
         listview = findViewById(R.id.listView1);
@@ -180,8 +180,17 @@ public class HomeActivity extends AppCompatActivity {
     {
         String vsebina = beriIzDatoteke();
         final List<String> ListElementsArrayList = new ArrayList<>(Arrays.asList(ListElements));
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>
-                (HomeActivity.this, android.R.layout.simple_list_item_1, ListElementsArrayList);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (HomeActivity.this, android.R.layout.simple_list_item_1, ListElementsArrayList) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text = (TextView) view.findViewById(android.R.id.text1);
+                text.setTypeface(monospace);
+                text.setTextSize(19);
+                return view;
+            }
+        } ;
         listview.setAdapter(adapter);
         ListElementsArrayList.add(vsebina);
         adapter.notifyDataSetChanged();

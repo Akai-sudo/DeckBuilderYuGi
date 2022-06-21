@@ -34,42 +34,28 @@
         android:fontFamily="monospace"
         android:text="@string/arsenal"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172"
+        app:layout_constraintVertical_bias="0.161"
         tools:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-    <!--<LinearLayout
-        android:id="@+id/ly"
-        android:layout_width="323dp"
-        android:layout_height="160dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:fontFamily="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295">
-    </LinearLayout>-->
 
     <ScrollView
         android:id="@+id/sv"
-        android:layout_width="283dp"
-        android:layout_height="140dp"
+        android:layout_width="317dp"
+        android:layout_height="199dp"
         android:fontFamily="monospace"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.318">
+        app:layout_constraintVertical_bias="0.329">
 
         <LinearLayout
             android:id="@+id/ly"
@@ -80,17 +66,17 @@
 
     <Button
         android:id="@+id/create"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="119dp"
+        android:layout_height="55dp"
+        android:fontFamily="monospace"
         android:onClick="deckActivity"
         android:text="@string/create"
-        android:fontFamily="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.874"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintVertical_bias="0.158" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -99,66 +85,64 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sv"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.41" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
-        android:paddingRight="10dp"
-        android:text="@string/add_buddy"
+        android:layout_width="119dp"
+        android:layout_height="55dp"
         android:fontFamily="monospace"
+        android:text="@string/add_buddy"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sv"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintVertical_bias="0.408" />
 
     <ListView
         android:id="@+id/listView1"
-        android:layout_width="wrap_content"
-        android:layout_height="145dp"
+        android:layout_width="353dp"
+        android:layout_height="216dp"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:fontFamily="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843">
-    </ListView>
+        app:layout_constraintVertical_bias="0.852"></ListView>
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="105dp"
+        android:layout_width="129dp"
         android:layout_height="55dp"
         android:fontFamily="monospace"
         android:onClick="buddyActivity"
         android:text="@string/buddy_details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintVertical_bias="0.98" />
 
     <Button
         android:id="@+id/btnSignOut"
-        android:layout_width="wrap_content"
+        android:layout_width="129dp"
         android:layout_height="55dp"
         android:text="@string/signout"
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.675"
         app:layout_constraintStart_toEndOf="@+id/button6"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
+        app:layout_constraintVertical_bias="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

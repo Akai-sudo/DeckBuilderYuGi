@@ -45,7 +45,7 @@ public class DeckActivity extends AppCompatActivity{
 
     static Cards[] karteZaPrikaz;
     Deck novDeck;
-    String imeDecka;
+    String imeDecka = "My deck";
     SharedPreferences mPrefs;
     Typeface monospace;
 
@@ -55,7 +55,7 @@ public class DeckActivity extends AppCompatActivity{
         mPrefs = getPreferences(MODE_PRIVATE);
         setContentView(R.layout.activity_deck);
         monospace = Typeface.createFromAsset(getAssets(),
-                "fonts/monospace.bold.ttf");
+                "fonts/DroidSansMono.ttf");
 
         karteZaPrikaz = MainActivity.povrniVseDobljeneKarte();
         LinearLayout ll = findViewById(R.id.ly);
@@ -82,7 +82,7 @@ public class DeckActivity extends AppCompatActivity{
                 textView.setText(card.name);
                 textView.setTypeface(monospace);
                 textView.setGravity(Gravity.CENTER);
-                textView.setPadding(0, 0, 0, 10);
+                textView.setPadding(0, 10, 0, 20);
 
                 textView.setOnClickListener(v -> {
 
